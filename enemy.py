@@ -2,38 +2,27 @@ import random
 import weapons
 import ancient_names
 
-#enemy stats
-enemy_name = ""
-enemy_health = 0
-enemy_shield = 0
-enemy_loot = []
-enemy_inventory = []
+#create an enemy
+class Enemy:
+    def __init__(self, name, health, shield, loot, inventory, en_weapon):
+        self.name = name
+        self.health = health
+        self.shield = shield
+        self.loot = loot
+        self.inventory = inventory
+        self.en_weapon = en_weapon
 
-def generate_enemy():
-    global enemy_name, enemy_health, enemy_shield, enemy_loot, enemy_inventory
-    enemy_name = random.choice(ancient_names.npc) + " " + random.choice(ancient_names.title)
-    enemy_health = random.randint(50, 100)
-    enemy_shield = random.randint(0, 50)
-    
-    weapon_choice = random.randint(1, 3)
-    if weapon_choice == 1:
-        weapons.axe()
-    elif weapon_choice == 2:
-        weapons.sword()
-    else:
-        weapons.spear()
-    weapons.equip_enemy_weapon()
+def generate_enemy(Enemy):
+    return Enemy(
+        name=random.choice(ancient_names.npc) + " " + random.choice(ancient_names.title),
+        health=random.randint(50, 100),
+        shield=random.randint(0, 50),
+        loot=random.choice(["gold", "item", "weapon"]),
+        inventory=[],
+        en_weapon=random.choice([weapons.axe(), weapons.sword(), weapons.spear()])
+    )
 
-    loot_choice = random.randint(1, 3)
-    if loot_choice == 1:
-        #add the weapon
-        pass
-    elif loot_choice == 2:
-        #add gold
-        pass
-    else:
-        #add an item
-        pass
 
-generate_enemy()
-print(enemy_name, enemy_health, enemy_shield, enemy_loot, enemy_inventory)
+enemy = generate_enemy(Enemy)
+
+print(f"Name: {enemy.name}, Health: {enemy.health}, Shield: {enemy.shield}, Loot: {enemy.loot}, Inventory: {enemy.inventory}, Enemy Weapon: {enemy.en_weapon}")
