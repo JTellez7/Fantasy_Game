@@ -34,3 +34,6 @@ def generate_enemy():
     else:
         #add an item
         pass
+
+generate_enemy()
+print(enemy_name, enemy_health, enemy_shield, enemy_loot, enemy_inventory)

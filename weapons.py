@@ -16,21 +16,21 @@ new_armor_piercing = False
 #weapons
 def axe():
     global new_weapon_name, new_weapon_damage, new_weapon_durability, new_armor_piercing
-    new_weapon_name = "Axe of " + random.choice(ancient_names.names)
+    new_weapon_name = "Axe of " + random.choice(ancient_names.weapon_names)
     new_weapon_damage = random.randint(15, 25)
     new_weapon_durability = random.randint(10, 15)
     new_armor_piercing = False
 
 def sword():
     global new_weapon_name, new_weapon_damage, new_weapon_durability, new_armor_piercing
-    new_weapon_name = "Sword of " + random.choice(ancient_names.names)
+    new_weapon_name = "Sword of " + random.choice(ancient_names.weapon_names)
     new_weapon_damage = random.randint(10, 20)
     new_weapon_durability = random.randint(15, 20)
     new_armor_piercing = False
 
 def spear():
     global new_weapon_name, new_weapon_damage, new_weapon_durability, new_armor_piercing
-    new_weapon_name = "Spear of " + random.choice(ancient_names.names)
+    new_weapon_name = "Spear of " + random.choice(ancient_names.weapon_names)
     new_weapon_damage = random.randint(5, 15)
     new_weapon_durability = random.randint(5, 10)
     new_armor_piercing = True
