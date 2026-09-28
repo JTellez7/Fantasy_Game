@@ -43,3 +43,11 @@ def equip_weapon():
     weapon_durability = new_weapon_durability
     armor_piercing = new_armor_piercing
     print(f"You have equipped the {weapon_name}.")
+
+#enemy weapon
+def equip_enemy_weapon():
+    global enemy_weapon_name, enemy_weapon_damage, enemy_weapon_durability, enemy_armor_piercing
+    enemy_weapon_name = new_weapon_name
+    enemy_weapon_damage = new_weapon_damage
+    enemy_weapon_durability = new_weapon_durability
+    enemy_armor_piercing = new_armor_piercing
